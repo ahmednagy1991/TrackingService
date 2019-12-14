@@ -300,6 +300,8 @@ exports.createLocation = function (locationInfo, callback) {
 			//live_location = ;
 			success[0].Latitude = locationInfo.Latitude;
 			success[0].Longitude = locationInfo.Longitude;
+			success[0].LatitudeGPS = locationInfo.LatitudeGPS;
+			success[0].LongitudeGPS = locationInfo.LongitudeGPS;
 			success[0].creationDate = date;
 			
 			success[0].save(function (err, success) {
@@ -336,6 +338,8 @@ exports.createLocation = function (locationInfo, callback) {
 		IMEI: locationInfo.IMEI,
 		Latitude: locationInfo.Latitude,
 		Longitude: locationInfo.Longitude,
+		LatitudeGPS: locationInfo.LatitudeGPS,
+		LongitudeGPS: locationInfo.LongitudeGPS,
 		creationDate: date
 	});
 
