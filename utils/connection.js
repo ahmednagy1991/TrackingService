@@ -319,6 +319,8 @@ exports.createLocation = function (locationInfo, callback) {
 				IMEI: locationInfo.IMEI,
 				Latitude: locationInfo.Latitude,
 				Longitude: locationInfo.Longitude,
+				LatitudeGPS: locationInfo.LatitudeGPS,
+				LongitudeGPS: locationInfo.LongitudeGPS,
 				creationDate: date
 			});
 
