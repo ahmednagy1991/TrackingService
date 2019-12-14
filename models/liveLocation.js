@@ -6,6 +6,8 @@ let livelocationSchema = new Schema({
     IMEI: String,
     Latitude: String,
     Longitude: String,
+    LatitudeGPS: String,
+    LongitudeGPS: String,
     creationDate: Date
 });
 

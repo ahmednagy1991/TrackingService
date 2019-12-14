@@ -24,6 +24,24 @@ exports.addLocation = function (req, res) {
 };
 
 
+exports.getLastLocations = function (req, res) {
+
+    connection.connectToDb(function (error) {
+        if (error) {
+            res.status(500).json({ "msg": "error connecting to db", status: "CONNECTION_ERROR" });
+            return;
+        }
+      
+        connection.getLastLocation(req.body.IMEI, function (err, success) {
+            if (err) {
+                res.status(500).json({ "msg": "error updating info", status: "CONNECTION_ERROR" });
+                return;
+            }
+            res.status(200).json({ msg: success });
+        });
+    });
+};
+
 exports.findMe = function (req, res) {
 
     connection.connectToDb(function (error) {

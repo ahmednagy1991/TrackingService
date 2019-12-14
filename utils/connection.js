@@ -266,6 +266,20 @@ exports.findMe = function (locationInfo, callback) {
 	});
 };
 
+exports.getLastLocations = function (IMEI, callback) {
+	Location.find({ IMEI: IMEI }, function (err, success) {
+		if (err) {
+			utils.log("[createLeader] Error fetching the doc " + err);
+			callback(err);
+
+		}
+		callback(undefined, success);
+		// If the leader is available, Then update the existing document
+		
+		
+	});
+};
+
 exports.createLocation = function (locationInfo, callback) {
 	let location;
 	let live_location;
@@ -336,3 +350,5 @@ exports.createLocation = function (locationInfo, callback) {
 	});
 
 };
+
+

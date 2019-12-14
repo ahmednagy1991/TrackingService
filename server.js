@@ -57,6 +57,7 @@ app.use("/leadership", leadRouter);
 
 locationRouter.post("/addLocation",location.addLocation)
 locationRouter.post("/findme", location.findMe)
+locationRouter.post("/getlastlocs", location.getLastLocations)
 app.use("/location", locationRouter);
 
 // Api to get the Prmotion information
